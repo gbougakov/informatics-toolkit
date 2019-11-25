@@ -1,7 +1,7 @@
 {
   "name": "informatics",
   "description": "A toolkit for Informatics ICPC judging system",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "George Bougakov @gbougakov",
   "bin": {
     "informatics": "./bin/run"
