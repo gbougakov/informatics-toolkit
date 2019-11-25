@@ -58,6 +58,9 @@ class ExportCommand extends Command {
 
       //console.log(path.join(process.cwd(), args.path, parcel.problem.id.toString()))
       //console.log(process.cwd(), args.path, parcel.problem.id)
+      if (flags.debug) {
+        console.log(body)
+      }
       try {
         fs.mkdirSync(path.join(process.cwd(), args.path, parcel.problem.id.toString()), {recursive: true})
         fs.writeFileSync(path.join(process.cwd(), args.path, parcel.problem.id.toString(), parcel.id + '.' + langToFile(parcel.ejudge_language_id)), body.data.source)
