@@ -4,7 +4,10 @@ const got = require('got')
 const {CookieJar} = require('tough-cookie')
 const Conf = require('conf')
 
-const config = new Conf()
+const config = new Conf({
+  projectName: 'informatics',
+  projectVersion: '0.0.1'
+})
 const cookieJar = new CookieJar()
 
 class LoginCommand extends Command {

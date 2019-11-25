@@ -9,7 +9,10 @@ const langToFile = require('../langToFile')
 
 const fs = require('fs')
 
-const config = new Conf()
+const config = new Conf({
+  projectName: 'informatics',
+  projectVersion: '0.0.1'
+})
 const cookieJar = new CookieJar()
 
 async function getAllParcels(onlyOK) {
