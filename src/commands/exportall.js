@@ -58,11 +58,13 @@ class ExportCommand extends Command {
 
       //console.log(path.join(process.cwd(), args.path, parcel.problem.id.toString()))
       //console.log(process.cwd(), args.path, parcel.problem.id)
-
-      //console.log(body)
-
-      fs.mkdirSync(path.join(process.cwd(), args.path, parcel.problem.id.toString()), {recursive: true})
-      fs.writeFileSync(path.join(process.cwd(), args.path, parcel.problem.id.toString(), parcel.id + '.' + langToFile(parcel.ejudge_language_id)), body.data.source)
+      try {
+        fs.mkdirSync(path.join(process.cwd(), args.path, parcel.problem.id.toString()), {recursive: true})
+        fs.writeFileSync(path.join(process.cwd(), args.path, parcel.problem.id.toString(), parcel.id + '.' + langToFile(parcel.ejudge_language_id)), body.data.source)
+      } catch(error) {
+        console.log('Failed to write. ', error)
+      }
+      
       bar.tick()
     })
   }
@@ -75,7 +77,8 @@ ExportCommand.args = [
 ExportCommand.description = `Export all your parcels from Informatics`
 
 ExportCommand.flags = {
-  onlyOK: flags.boolean({char: 'k', description: 'Only export parcels marked as "OK"'})
+  onlyOK: flags.boolean({char: 'k', description: 'Only export parcels marked as "OK"'}),
+  debug: flags.boolean({char: 'd', description: 'Debug mode'})
 }
 
 module.exports = ExportCommand
