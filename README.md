@@ -19,7 +19,7 @@ $ npm install -g informatics
 $ informatics COMMAND
 running command...
 $ informatics (-v|--version|version)
-informatics/0.0.3 darwin-x64 node-v11.13.0
+informatics/0.0.4 darwin-x64 node-v11.13.0
 $ informatics --help [COMMAND]
 USAGE
   $ informatics COMMAND
@@ -41,10 +41,11 @@ USAGE
   $ informatics exportall [PATH]
 
 OPTIONS
+  -d, --debug   Debug mode
   -k, --onlyOK  Only export parcels marked as "OK"
 ```
 
-_See code: [src/commands/exportall.js](https://github.com/gbougakov/informatics-toolkit/blob/v0.0.3/src/commands/exportall.js)_
+_See code: [src/commands/exportall.js](https://github.com/gbougakov/informatics-toolkit/blob/v0.0.4/src/commands/exportall.js)_
 
 ## `informatics help [COMMAND]`
 
@@ -72,5 +73,5 @@ USAGE
   $ informatics login
 ```
 
-_See code: [src/commands/login.js](https://github.com/gbougakov/informatics-toolkit/blob/v0.0.3/src/commands/login.js)_
+_See code: [src/commands/login.js](https://github.com/gbougakov/informatics-toolkit/blob/v0.0.4/src/commands/login.js)_
 <!-- commandsstop -->
