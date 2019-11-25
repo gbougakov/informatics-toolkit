@@ -49,7 +49,9 @@ class ExportCommand extends Command {
     }
 
     const parcels = await getAllParcels(flags.onlyOK)
-    //console.log(parcels)
+    if (flags.debug) {
+      console.log(parcels)
+    }
 
     const bar = new ProgressBar('Downloading [:bar] :percent :eta', { total: parcels.length })
 
